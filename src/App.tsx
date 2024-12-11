@@ -143,13 +143,15 @@ function App() {
           />
         </div>
 
-        <EditModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          entry={editingEntry}
-          onSave={handleSave}
-          onDelete={handleDelete}
-        />
+        {editingEntry && (
+          <EditModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            entry={editingEntry}
+            onSave={handleSave}
+            onDelete={handleDelete}
+          />
+        )}
       </div>
     </div>
   )
